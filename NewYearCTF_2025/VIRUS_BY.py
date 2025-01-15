@@ -26,6 +26,7 @@ for j in range(5):
         r.sendline(f"{i}:{j}")
         resp=r.recvall().decode("utf-8")
         if "grodno" in resp:
+            print(resp)
             break
         r.close()
 
