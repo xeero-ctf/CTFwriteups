@@ -24,9 +24,8 @@ for j in range(5):
         r.sendline(b"Lukashenko")
         print(r.recvuntil(b">").decode("utf-8"))
         r.sendline(f"{i}:{j}")
-        ciao=r.recvall().decode("utf-8")
-        if "grodno" in ciao:
-            print("ciao", ciao)
+        resp=r.recvall().decode("utf-8")
+        if "grodno" in resp:
             break
         r.close()
 
